@@ -4,7 +4,9 @@ namespace CRUD_WebApi.DAL {
     public class EmployeesDbContext : DbContext {
         public EmployeesDbContext() { }
 
-        public EmployeesDbContext(DbContextOptions<EmployeesDbContext> options) : base(options) { }
+        public EmployeesDbContext(DbContextOptions<EmployeesDbContext> options) : base(options) {
+            Database.EnsureCreated();
+        }
 
         public virtual DbSet<Employee> Employees { get; set; }
 

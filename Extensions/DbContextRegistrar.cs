@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CRUD_WebApi.Extensions {
     public static class DbContextRegistrar {
-        private const string ConnectionStringName = "EmployeesDB";
+        private const string ConnectionStringName = "EmployeesDBConnect";
         public static IServiceCollection AddDbContext(this IServiceCollection services, IConfiguration configuration) {
             var connectionString = configuration.GetConnectionString(ConnectionStringName);
             services.AddDbContext<EmployeesDbContext>(opts => opts.UseSqlServer(connectionString));
