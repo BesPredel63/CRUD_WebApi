@@ -21,7 +21,7 @@ namespace CRUD_WebApi.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CRUD_WebApi.DAL.Employee", b =>
+            modelBuilder.Entity("CRUD_WebApi.DAL.Employees", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

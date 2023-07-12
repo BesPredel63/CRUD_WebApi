@@ -2,17 +2,17 @@
 
 namespace CRUD_WebApi.DAL {
     public class EmployeesDbContext : DbContext {
-        public EmployeesDbContext() { }
+        //public EmployeesDbContext() { }
 
         public EmployeesDbContext(DbContextOptions<EmployeesDbContext> options) : base(options) {
-            Database.EnsureCreated();
+            Database.Migrate();
         }
 
-        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Employees> Employees { get; set; }
 
         // определение структуры таблицы Employees
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
-            modelBuilder.Entity<Employee>(entity => {
+            modelBuilder.Entity<Employees>(entity => {
                 entity.ToTable(nameof(Employees));
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.FirstName)
